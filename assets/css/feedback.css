@@ -1,0 +1,62 @@
+/* Feedback */
+
+/* Container para mensagens de feedback */
+.feedback-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Mensagem de aviso */
+.msg-warning {
+  width: inherit;
+  color: var(--warning-text-emphasis);
+  background-color: var(--warning-bg-subtle);
+  border-left: 5px solid var(--warning-border-subtle);
+  padding: 8px;
+  border-radius: var(--border-radius);
+  line-height: 20px;
+  animation: slideLeft 1s ease;
+}
+
+/* Mensagem de perigo */
+.msg-danger {
+  width: inherit;
+  color: var(--danger-text-emphasis);
+  background-color: var(--danger-bg-subtle);
+  border-left: 5px solid var(--danger-border-subtle);
+  padding: 8px;
+  border-radius: var(--border-radius);
+  line-height: 20px;
+  animation: slideLeft 1s ease;
+}
+
+/* Mensagem informativa */
+.msg-info {
+  width: inherit;
+  color: var(--info-text-emphasis);
+  background-color: var(--info-bg-subtle);
+  border-left: 5px solid var(--info-border-subtle);
+  padding: 8px;
+  border-radius: var(--border-radius);
+  line-height: 20px;
+  animation: slideLeft 1s ease;
+}
+
+/* Validação */
+
+/* Mensagem de erro de validação */
+.message-error {
+  font-size: 0.75rem;
+  line-height: 18px;
+  color: var(--form-invalid-color);
+  margin-top: 3px;
+  margin-left: 1px;
+}
+
+/* Estilo para campo de entrada inválido */
+.input-invalid {
+  border: 2px solid var(--form-invalid-border-color) !important;
+}

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/feedback.css">
+  <link rel="stylesheet" href="assets/css/form.css">
+  <link rel="stylesheet" href="assets/css/navigation.css">
+  <link rel="stylesheet" href="assets/css/result.css">
+  <title>rescisãofácil</title>
+</head>
+
+<body>
+  <!-- Cabeçalho da página -->
+  <header class="navbar-container">
+    <div class="navbar">
+      <div>
+        <h1>rescisão<Span class="gradient">fácil</Span></h1>
+      </div>
+      <div>
+        <!-- Botão de alternância de tema -->
+        <button type="button" id="btn-theme" class="btn-theme">
+          <span class="span-theme">Tema</span>
+          <div id="icon-light" class="icon-light">
+            <!-- Ícone de sol para tema claro -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sun-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+            </svg>
+          </div>
+
+          <div id="icon-dark" class="icon-dark">
+            <!-- Ícone de lua e estrelas para tema escuro -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+              <path
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+              <path
+                d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+            </svg>
+          </div>
+
+          <!-- Ícone de cursor para baixo -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+            <path
+              d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+          </svg>
+        </button>
+
+        <!-- Menu suspenso para alternância de temas -->
+        <div id="dropdown" class="dropdown">
+          <div class="theme">
+            <input type="checkbox" name="dark-mode" id="dark-mode">
+            <label for="dark-mode">
+              <!-- Ícone de lua e estrelas para tema escuro -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-moon-stars-fill" viewBox="0 0 16 16">
+                <path
+                  d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                <path
+                  d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+              </svg>Tema escuro</label>
+          </div>
+
+          <div class="theme">
+            <input type="checkbox" name="light-mode" id="light-mode" checked>
+            <label for="light-mode">
+              <!-- Ícone de sol para tema claro -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                <path
+                  d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+              </svg>Tema claro</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="container" class="container">
+      <div class="content">
+        <!-- Título de boas-vindas -->
+        <h2 class="revel">Bem-vindo!</h2>
+        <!-- Descrição do serviço -->
+        <p class="slide-up">Calcule sua rescisão contratual com facilidade. Insira suas informações e obtenha resultados
+          precisos em
+          poucos
+          cliques!</p>
+        <!-- Botão de início -->
+        <button type="button" class="btn-initial" id="btn-initial">Iniciar <svg xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+          </svg></button>
+      </div>
+
+      <div class="content slide-right">
+        <!-- Imagem de ilustração -->
+        <img src="assets/img/Calculator-amico.svg" alt="Imagem de ilustração">
+      </div>
+    </div>
+
+    <!-- Formulário de cálculo -->
+    <form class="form-container" id="form-group">
+      <!-- Campos do formulário -->
+      <fieldset class="form-group">
+        <!-- Campo: Motivo da rescisão de contrato -->
+        <div id="form-option" class="form">
+          <h3>Motivo da Rescisão</h3>
+          <p>Para começar, selecione o motivo da sua rescisão de contrato.</p>
+          <div class="radio-group">
+            <div class="radio-input">
+              <input type="radio" name="option" id="self-resignation" tabindex="1">
+              <label class="radio-label" for="self-resignation">Pedido de demissão</label>
+            </div>
+            <div class="radio-input">
+              <input type="radio" name="option" id="lay-off" tabindex="2">
+              <label class="radio-label" for="lay-off">Demitido</label>
+            </div>
+            <div class="radio-input">
+              <input type="radio" name="option" id="fired-for-cause" tabindex="3">
+              <label class="radio-label" for="fired-for-cause">Demitido por justa causa</label>
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-option" class="btn-next" tabindex="4">Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: Sálario -->
+        <div id="form-pay" class="form">
+
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-pay" class="btn-back btn-xl" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>Motivo da rescisão
+          </button>
+
+          <h3>Informe seu Salário</h3>
+          <p>Por favor, insira o valor do seu salário</p>
+
+          <div class="input-container">
+            <div class="input-text">
+              <span id="span-pay" class="input-span">R$</span>
+              <input type="text" id="pay" autocomplete="off" tabindex="2" placeholder="0.00">
+            </div>
+            <div id="feedback-pay">
+              <!-- Mensagem de erro será exibida aqui, se aplicável -->
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-pay" class="btn-next" tabindex="3" disabled>Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: Aviso prévio -->
+        <div id="form-early-warning" class="form">
+
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-early-warning" class="btn-back btn-sm" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>Salário
+          </button>
+
+          <h3>Aviso Prévio: Está Cumprindo?</h3>
+          <p>Por favor, selecione a opção que melhor descreve sua situação</p>
+          <div class="radio-group">
+            <div class="radio-input">
+              <input type="radio" name="early-warning" id="early-warning-true" tabindex="2">
+              <label class="radio-label" for="early-warning-true">Sim</label>
+            </div>
+            <div class="radio-input">
+              <input type="radio" name="early-warning" id="early-warning-false" tabindex="3">
+              <label class="radio-label" for="early-warning-false">Não</label>
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-early-warning" class="btn-next" tabindex="4">Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: FGTS -->
+        <div id="form-fgts" class="form">
+
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-fgts" class="btn-back btn-lg" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>Aviso Prévio
+          </button>
+
+          <h3>Consulte o Saldo do seu FGTS</h3>
+
+          <!-- Link para consultar o saldo do FGTS-->
+          <a class="form-link" href="https://www.fgts.gov.br/Pages/sou-trabalhador/app-fgts.aspx" target="_blank"
+            title="Clique para acessar o aplicativo FGTS" tabindex="2"><svg xmlns="http://www.w3.org/2000/svg"
+              width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+              <path fill-rule="evenodd"
+                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+            </svg> Acessar o Aplicativo FGTS</a>
+
+          <p>Por favor, insira o valor do seu FGTS</p>
+
+          <div class="input-container">
+            <div class="input-text">
+              <span id="span-fgts" class="input-span">R$</span>
+              <input type="text" id="fgts" class="input-text" autocomplete="off" tabindex="3" placeholder="0.00">
+            </div>
+            <div id="feedback-fgts">
+              <!-- Mensagem de erro será exibida aqui, se aplicável -->
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-fgts" class="btn-next" tabindex="4" disabled>Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: Opção de saque -->
+        <div id="form-withdrawal-option" class="form">
+
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-withdrawal-option" class="btn-back btn-sm" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>FGTS
+          </button>
+
+          <h3>Selecione a Modalidade de Saque</h3>
+
+          <!-- Saiba mais -->
+          <button type="button" id="help-withdrawal-option" class="btn-learn-more" aria-label="Ajuda"
+            title="Clique para entender as diferenças entre o saque rescisão e o saque-aniversário" tabindex="2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle"
+              viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path
+                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>Saiba Mais
+          </button>
+
+          <p>Por favor, escolha uma opção</p>
+          <div class="radio-group">
+            <div class="radio-input">
+              <input type="radio" name="withdrawal-option" id="termination" tabindex="2">
+              <label class="radio-label" for="termination">Saque rescisão</label>
+            </div>
+            <div class="radio-input">
+              <input type="radio" name="withdrawal-option" id="birthday" tabindex="3">
+              <label class="radio-label" for="birthday">Saque aniversário</label>
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-withdrawal-option" class="btn-next" tabindex="4">Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: Data de início e término -->
+        <div id="form-date" class="form">
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-date" class="btn-back btn-xxl" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>Modalidade de Saque
+          </button>
+
+          <h3>Datas de Início e Saída da Empresa</h3>
+          <p>Por favor, selecione as datas de início e saída da sua empresa</p>
+
+          <div class="date-container">
+            <div class="flex-date">
+              <label for="start">Data de início:</label>
+              <input type="date" id="start" tabindex="2">
+            </div>
+            <div class="flex-date">
+              <label for="finish">Data do término:</label>
+              <input type="date" id="finish" tabindex="3">
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-date" class="btn-next" tabindex="4" disabled>Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: Férias -->
+        <div id="form-leave" class="form">
+
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-leave" class="btn-back btn-lg" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>Início e Saída
+          </button>
+
+          <h3>Tem Férias Vencidas?</h3>
+
+          <!-- Saiba mais-->
+          <button type="button" id="help-leave" class="btn-learn-more" aria-label="Ajuda" title="Clique e saiba mais sobre férias vencidas"
+            tabindex="2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle"
+              viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path
+                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>Saiba Mais
+          </button>
+
+          <p>Por favor, selecione uma opção</p>
+          <div class="radio-group">
+            <div class="radio-input">
+              <input type="radio" name="leave" id="leave-true" tabindex="2">
+              <label class="radio-label" for="leave-true">Sim</label>
+            </div>
+            <div class="radio-input">
+              <input type="radio" name="leave" id="leave-false" tabindex="3">
+              <label class="radio-label" for="leave-false">Não</label>
+            </div>
+          </div>
+
+          <!-- Botão de avançar -->
+          <div class="btn-container">
+            <button type="button" id="btn-next-leave" class="btn-next" tabindex="4">Próximo</button>
+          </div>
+        </div>
+
+        <!-- Campo: Férias proporcionais -->
+        <div id="form-proportional-leave" class="form">
+
+          <!-- Botão de voltar -->
+          <button type="button" id="btn-back-proportional-leave" class="btn-back btn-sm" tabindex="1"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left"
+              viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+            </svg>Férias
+          </button>
+
+          <h3>Férias Proporcionais</h3>
+
+          <!-- Saiba mais-->
+          <button type="button" id="help-proportional-leave" class="btn-learn-more" aria-label="Ajuda"
+            title="Clique e saiba mais sobre férias proporcionais" tabindex="2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle"
+              viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path
+                d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+            </svg>Saiba Mais
+          </button>
+
+          <p>Escolha a opção que melhor descreve suas férias</p>
+          <div class="radio-group">
+            <div class="radio-input">
+              <input type="radio" name="proportional-leave" id="proportional-leave-true" tabindex="3">
+              <label class="radio-label" for="proportional-leave-true">Sim</label>
+            </div>
+            <div class="radio-input">
+              <input type="radio" name="proportional-leave" id="proportional-leave-false" tabindex="4">
+              <label class="radio-label" for="proportional-leave-false">Não</label>
+            </div>
+          </div>
+
+          <!-- Campo: Selecione a quantidade de meses-->
+          <div id="form-proportional-leave-option" class="select shake">
+            <label for="proportional-leave-option" class="proportional-leave-option">Selecione a quantidade de
+              meses?</label>
+            <select id="proportional-leave-option" tabindex="4">
+              <option value="one">1</option>
+              <option value="two">2</option>
+              <option value="three">3</option>
+              <option value="four">4</option>
+              <option value="five">5</option>
+              <option value="six">6</option>
+              <option value="seven">7</option>
+              <option value="eight">8</option>
+              <option value="nine">9</option>
+              <option value="ten">10</option>
+              <option value="eleven">11</option>
+            </select>
+          </div>
+
+          <!-- Botão de cálculo -->
+          <button type="submit" id="btn-calc" class="btn-calc" tabindex="5">Calcular</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <!-- Descubra informações detalhadas sobre a modalidade de saque rescisão do FGTS -->
+    <div id="lm-withdrawal-option" class="learn-more-content">
+      <!-- Botão para fechar o "Saiba mais" -->
+      <div class="btn-lm-container">
+        <button type="button" id="btn-close-withdrawal-option" class="btn-lm"><svg xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+          </svg></button>
+      </div>
+      <h3>Diferença entre Saque Rescisão e Saque Aniversário</h3>
+      <h4>Saque Rescisão:</h4>
+      <p>O saque rescisão é um tipo de saque do FGTS que ocorre em situações específicas relacionadas ao término
+        do contrato de trabalho. Geralmente, ele pode ser solicitado em casos como:</p>
+      <ul>
+        <li>Demissão sem justa causa</li>
+        <li>Término de contrato por prazo determinado</li>
+        <li>Rescisão por acordo mútuo</li>
+        <li>Aposentadoria</li>
+      </ul>
+      <p>No saque rescisão, o valor disponível inclui todo o saldo acumulado na conta do FGTS do trabalhador, bem
+        como a multa de 40% sobre o montante depositado pelo empregador durante o contrato de trabalho.</p>
+
+      <h4>Saque Aniversário:</h4>
+      <p>O saque aniversário, por outro lado, é uma modalidade opcional do FGTS que permite ao trabalhador sacar
+        uma parte do saldo de sua conta todos os anos no mês de seu aniversário. A principal característica do
+        saque aniversário é a escolha voluntária por parte do trabalhador. Alguns pontos importantes sobre o saque
+        aniversário são:</p>
+      <ul>
+        <li>Percentual de saque varia de acordo com a faixa de saldo disponível na conta do FGTS do trabalhador,
+          com alíquotas progressivas.</li>
+        <li>Perda da multa de 40% em caso de demissão sem justa causa.</li>
+        <li>Possibilidade de retorno à modalidade de saque rescisão após dois anos de carência.</li>
+      </ul>
+
+      <p>Em resumo, a principal diferença entre saque rescisão e saque aniversário do FGTS é que o primeiro está
+        relacionado ao término do contrato de trabalho e permite o saque do saldo total, incluindo a multa de 40%,
+        enquanto o segundo é uma opção anual de saque de uma parte do saldo disponível na conta do FGTS no mês de
+        aniversário, com a perda da multa de 40% em caso de demissão sem justa causa. A escolha entre essas
+        modalidades depende das necessidades e preferências individuais do trabalhador.</p>
+    </div>
+
+    <!-- Saiba mais sobre férias vencidas e como funcionam -->
+    <div id="lm-leave" class="learn-more-content">
+      <!-- Botão para fechar o "Saiba mais" -->
+      <div class="btn-lm-container">
+        <button type="button" id="btn-close-leave" class="btn-lm"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+            height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+          </svg></button>
+      </div>
+      <h3>Férias Vencidas: O que são e como funcionam</h3>
+
+      <h4>O que são férias vencidas?</h4>
+      <p>Férias vencidas referem-se ao período de descanso anual remunerado a que um empregado tem direito, mas que não
+        foi utilizado dentro do prazo legal estabelecido pela legislação trabalhista.</p>
+
+      <h4>Como funcionam as férias vencidas?</h4>
+      <p>Quando um empregado não tira suas férias dentro do período a que tem direito, geralmente de 12 meses após o
+        período aquisitivo, essas férias se tornam vencidas. As férias vencidas ainda são um direito do empregado, mas
+        existem regras específicas para sua concessão:</p>
+
+      <ul>
+        <li><strong>Pagamento em dobro:</strong> Em muitos países, como o Brasil, quando as férias se tornam vencidas, o
+          empregador é obrigado a pagar o valor correspondente ao período de férias não usufruídas em dobro. Isso
+          significa que o empregado receberá o valor das férias e um adicional equivalente ao mesmo valor, como uma
+          espécie de multa.</li>
+        <li><strong>Agendamento:</strong> O agendamento das férias vencidas geralmente precisa ser negociado entre o
+          empregado e o empregador. Em alguns casos, o empregado pode optar por tirar as férias vencidas ou receber o
+          pagamento em dobro.</li>
+        <li><strong>Prazo para concessão:</strong> Em muitos países, a concessão das férias vencidas deve ocorrer dentro
+          de um prazo estabelecido por lei após o período aquisitivo, para evitar o acúmulo excessivo de férias
+          vencidas.</li>
+      </ul>
+
+      <p>É importante ressaltar que as regras relacionadas a férias vencidas podem variar de acordo com a legislação
+        trabalhista de cada país. Portanto, é fundamental consultar a legislação local ou buscar orientação legal para
+        entender completamente os direitos e obrigações relacionados às férias vencidas.</p>
+    </div>
+
+    <!-- Saiba mais sobre férias proporcionais -->
+    <div id="lm-proportional-leave" class="learn-more-content">
+      <!-- Botão para fechar o "Saiba mais" -->
+      <div class="btn-lm-container">
+        <button type="button" id="btn-close-proportional-leave" class="btn-lm"><svg xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+          </svg></button>
+      </div>
+      <h3>Férias Proporcionais: Entenda Seus Direitos e Como Funcionam</h3>
+
+      <p>As férias proporcionais são um conceito importante dentro do contexto de direitos trabalhistas e se referem ao
+        período de descanso remunerado que um empregado tem direito quando não completa um ano completo de trabalho na
+        mesma empresa. Essa modalidade de férias é concedida de acordo com a proporção do tempo de serviço prestado pelo
+        empregado.</p>
+
+      <h4>Como Funcionam:</h4>
+
+      <p>Quando um funcionário é admitido em uma empresa, ele não tem direito a tirar férias completas no primeiro ano
+        de trabalho. As férias proporcionais entram em jogo nesse cenário. A regra básica é que o empregado adquire o
+        direito a um período de férias após completar 12 meses de serviço contínuo na mesma empresa. No entanto, se ele
+        for desligado ou pedir demissão antes desse período, ainda assim terá direito a um pagamento proporcional
+        correspondente ao tempo trabalhado.</p>
+
+      <h4>Cálculo das Férias Proporcionais:</h4>
+
+      <p>O cálculo das férias proporcionais é feito com base na seguinte fórmula:</p>
+
+      <p>Férias Proporcionais = (Salário Mensal ÷ 12) x (Meses Trabalhados)</p>
+
+      <p>Onde:</p>
+      <ul>
+        <li>"Salário Mensal" é o salário-base mensal do empregado.</li>
+        <li>"Meses Trabalhados" é o número de meses completos trabalhados na empresa até o momento da demissão ou pedido
+          de demissão.</li>
+      </ul>
+
+      <h5>Exemplo:</h5>
+
+      <p>Suponhamos que um empregado tenha trabalhado em uma empresa por 6 meses com um salário mensal de R$ 2.000,00 e
+        decida sair da empresa. O cálculo das férias proporcionais seria:</p>
+
+      <p>Férias Proporcionais = (R$ 2.000,00 ÷ 12) x 6 = R$ 1.000,00</p>
+
+      <p>Neste caso, o empregado teria direito a receber R$ 1.000,00 referentes às suas férias proporcionais no momento
+        da saída.</p>
+
+      <h4>Importância das Férias Proporcionais:</h4>
+
+      <p>As férias proporcionais são importantes, pois garantem que os trabalhadores que não completam um ano completo
+        de serviço ainda recebam um pagamento justo por seus dias de férias não gozados. Esse direito visa proteger os
+        direitos trabalhistas dos empregados, incentivando a continuidade no emprego e garantindo uma compensação
+        adequada em caso de desligamento.</p>
+
+      <p>Em resumo, as férias proporcionais são uma parte essencial das leis trabalhistas que asseguram que os
+        funcionários recebam uma compensação justa por seu tempo de serviço, mesmo que não tenham completado um ano
+        completo na mesma empresa. É crucial entender esses direitos para garantir um tratamento justo e equitativo no
+        ambiente de trabalho.</p>
+    </div>
+
+    <!-- Resultado do cálculo -->
+    <div id="result-container" class="main-container">
+
+      <!-- Feedback do cálculo -->
+      <div class="result-success revel">
+        <!-- Ícone de círculo verificado -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle"
+          viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+          <path
+            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+        </svg>
+        <p>Cálculo realizado com sucesso!</p>
+      </div>
+
+      <div class="secondary-container">
+        <div id="result-content" class="result-container">
+          <!-- Botão de fechar resultado e reiniciar o formulário -->
+          <button type="button" id="btn-reset" class="btn-reset"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+            </svg></button>
+          <!-- Área para exibir o resultado do cálculo -->
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Rodapé da página -->
+  <footer class="footer">
+    <p>2023, Rescisão Fácil &trade;</p>
+    <p>Desenvolvido por Gabriel Cavalcante</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/calcData.js"></script>
+  <script src="assets/js/calcProportionalLeave.js"></script>
+  <script src="assets/js/calcThirteenFirstSalary.js"></script>
+  <script src="assets/js/form.js"></script>
+  <script src="assets/js/greetingsMessage.js"></script>
+  <script src="assets/js/learnMore.js"></script>
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/validations.js"></script>
+  <script src="assets/js/unemploymentInsurance.js"></script>
+  <script src="assets/js/calculations.js"></script>
+</body>
+
+</html>

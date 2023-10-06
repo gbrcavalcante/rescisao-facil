@@ -1,0 +1,76 @@
+/* Animação de slide para a esquerda */
+.slide-left {
+  animation: slideLeft 1s ease 1s;
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Animação de slide para a direita */
+.slide-right {
+  animation: slideRight 1000ms ease;
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(5%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Animação de slide para cima */
+.slide-up {
+  animation: slideUp 500ms ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(25%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Animação de revelação com opacidade */
+.revel {
+  position: relative;
+  opacity: 0;
+  animation: revel 2s forwards;
+}
+
+@keyframes revel {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animação de tremer */
+.shake{
+  animation: shake 700ms ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-5px, 0); } /* Tremer para a esquerda */
+  20% { transform: translate(5px, 0); } /* Tremer para a direita */
+  30% { transform: translate(-5px, 0); } /* Tremer para a esquerda */
+  40% { transform: translate(5px, 0); } /* Tremer para a direita */
+  50% { transform: translate(-5px, 0); } /* Tremer para a esquerda */
+  60% { transform: translate(5px, 0); } /* Tremer para a direita */
+  70% { transform: translate(-5px, 0); } /* Tremer para a esquerda */
+  80% { transform: translate(5px, 0); } /* Tremer para a direita */
+  90% { transform: translate(-5px, 0); } /* Tremer para a esquerda */
+  100% { transform: translate(0, 0); } /* Voltar à posição original */
+}

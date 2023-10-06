@@ -1,0 +1,230 @@
+/* Botão Inicial */
+.btn-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 300px;
+  margin-top: 10px;
+  padding: 6px;
+  color: var(--white);
+  background-color: var(--teal);
+  border: 2px solid var(--teal);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+.btn-initial:hover {
+  background-color: #16b384;
+  border-color: #16b384;
+}
+
+.btn-initial:focus {
+  background-color: #16b384;
+  outline: 2px solid #16b384;
+  border: 2px solid var(--body-bg);
+}
+
+/* Botão Desabilitado */
+button:disabled {
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--secondary-color);
+  transition: all 300ms ease-in-out;
+}
+
+button:disabled:hover {
+  background-color: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--secondary-color);
+}
+
+/* Botão de Cálculo */
+.btn-calc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  margin-top: 40px;
+  padding: 6px;
+  color: var(--white);
+  background-color: var(--green);
+  border: 2px solid var(--green);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+.btn-calc:hover {
+  background-color: #157347;
+  border-color: #157347;
+}
+
+.btn-calc:focus {
+  background-color: #157347;
+  outline: 2px solid #157347;
+  border: 2px solid var(--tertiary-bg);
+}
+
+/* Botão de Voltar */
+.btn-back {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border-radius: var(--border-radius-pill);
+  background-color: var(--tertiary-bg);
+  color: var(--body-color);
+  border: none;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.btn-back:hover,
+.btn-back:focus {
+  background-color: var(--secondary-bg);
+  opacity: 1;
+}
+
+/* Botão pequeno */
+.btn-sm {
+  width: 80px;
+}
+
+/* Botão grande */
+.btn-lg {
+  width: 120px;
+}
+
+/* Botão extra grande */
+.btn-xl {
+  width: 150px;
+}
+
+/* Botão muito grande */
+.btn-xxl {
+  width: 180px;
+}
+
+/* Botão de Avançar */
+.btn-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 40px;
+}
+
+.btn-next {
+  padding: 6px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--green);
+  background-color: var(--green);
+  color: var(--white);
+  width: 40%;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.btn-next:hover {
+  background-color: #157347;
+  border-color: #157347;
+}
+
+.btn-next:focus {
+  background-color: #157347;
+  outline: 2px solid #157347;
+  border: 2px solid var(--tertiary-bg);
+}
+
+/* Botão "Saiba Mais" */
+.btn-learn-more {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 120px;
+  padding: 5px;
+  border-radius: var(--border-radius);
+  appearance: none;
+  color: var(--link-color);
+  border: none;
+  background-color: var(--tertiary-bg);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  font-size: 0.875rem;
+}
+
+.btn-learn-more:hover,
+.btn-learn-more:focus {
+  color: var(--link-hover-color);
+  text-decoration: var(--link-decoration);
+}
+
+.btn-lm-container {
+  display: flex;
+  justify-content: end;
+}
+
+.btn-lm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  opacity: 0.6;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.btn-lm:hover,
+.btn-lm:focus {
+  background-color: var(--secondary-bg);
+  opacity: 1;
+}
+
+.btn-lm svg {
+  width: 1rem;
+  height: auto;
+  color: var(--body-color);
+}
+
+/* Botão "Reset Form" */
+
+.btn-reset {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  opacity: 0.6;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.btn-reset:hover,
+.btn-reset:focus {
+  background-color: var(--secondary-bg);
+  opacity: 1;
+}
+
+.btn-reset svg {
+  width: 1rem;
+  height: auto;
+  color: var(--body-color);
+}

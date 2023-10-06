@@ -1,0 +1,142 @@
+/* Barra de Navegação */
+
+/* Contêiner da barra de navegação */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 10vh;
+  background-color: var(--dark);
+  box-shadow: var(--box-shadow-lg);
+}
+
+/* Elementos dentro da barra de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+}
+
+/* Título da barra de navegação */
+.navbar h1 {
+  font-weight: 700;
+  color: var(--light);
+}
+
+/* Gradiente de Texto */
+.gradient {
+  color: transparent;
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Botão de Troca de Tema */
+.span-theme {
+  display: flex;
+  color: var(--white);
+  opacity: 0.8;
+  transition: all 300ms ease-in-out;
+  font-size: 1rem;
+}
+
+/* Tema Atual */
+.theme label {
+  width: auto;
+  border: none;
+  background-color: var(--body-bg);
+  display: flex;
+  gap: 8px;
+  color: var(--secondary-color);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: var(--border-radius);
+}
+
+/* Checkbox (oculto) */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilo do Label quando o Checkbox está Marcado */
+input[type="checkbox"]:checked ~ label {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Botão do Tema */
+.btn-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  position: relative;
+  opacity: 0.8;
+  background-color: transparent;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+
+/* Efeito de Hover no Botão do Tema */
+.btn-theme:hover {
+  opacity: 1;
+}
+
+/* Foco no Botão do Tema */
+.btn-theme:focus {
+  outline: 1px solid var(--white);
+}
+
+/* Ícone no Botão do Tema */
+.btn-theme svg {
+  width: 0.625rem;
+  height: auto;
+  color: var(--white);
+  opacity: 0.6;
+  transition: all 300ms ease-in-out;
+}
+
+/* Ícone no Modo Claro */
+.icon-light svg {
+  width: 1.25rem;
+  height: auto;
+}
+
+/* Ícone no Modo Escuro */
+.icon-dark svg {
+  width: 1rem;
+  height: auto;
+}
+
+/* Ícone escuro não visível por padrão */
+.icon-dark {
+  display: none;
+}
+
+/* Posição relativa para o elemento da barra de navegação */
+.navbar {
+  position: relative;
+}
+
+/* Dropdown (menu suspenso) */
+.dropdown {
+  display: none;
+  gap: 8px;
+  flex-direction: column;
+  position: absolute;
+  right: 5px;
+  top: 50px;
+  background-color: var(--body-bg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  backdrop-filter: saturate(180%) blur(5px);
+  z-index: 2;
+}
