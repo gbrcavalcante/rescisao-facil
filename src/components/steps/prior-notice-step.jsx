@@ -54,7 +54,7 @@ export function PriorNoticeStep({ form }) {
                   </FormLabel>
                 </FormItem>
 
-                {terminationReason === "resignation" && (
+                {terminationReason.value === "resignation" && (
                   <FormItem className="flex items-center gap-3">
                     <FormControl>
                       <RadioGroupItem value="dispensado" />

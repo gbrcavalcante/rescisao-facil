@@ -4,7 +4,7 @@ export function calculatePriorNoticeDiscount(
   baseSalary
 ) {
   // Pedido de demissão + aviso prévio dispensado => NÃO desconta aviso prévio e multa
-  if (terminationReasonValue === "resignation" && priorNoticeValue !== "não") {
+  if (terminationReasonValue === "resignation" && priorNoticeValue === "não") {
     return baseSalary;
   }
 
