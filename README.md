@@ -31,4 +31,4 @@ Formulário multi-etapas para cálculo completo de **rescisão trabalhista** e *
 ## 🌐 Versão Hospedada
 
 Acesse a aplicação online em:  
-[https://rescisao-facil.vercel.app/form](https://rescisao-facil.vercel.app)
+[https://rescisao-facil.vercel.app](https://rescisao-facil.vercel.app)
