@@ -7,6 +7,7 @@ import {
   WITHDRAWAL_MODALITY_STEP,
   WORK_PERIOD_STEP,
   EXPERIENCE_TERMINATION_STEP,
+  LAST_UNEMPLOYMENT_BENEFIT_STEP,
 } from "@/constants/stepsConfig";
 
 const resignation_steps = [
@@ -24,6 +25,7 @@ const dismissal_without_cause_steps = [
   WORK_PERIOD_STEP,
   ACCRUED_VACATION_STEP,
   PROPORTIONAL_VACATION_STEP,
+  LAST_UNEMPLOYMENT_BENEFIT_STEP,
 ];
 
 const dismissal_with_cause_steps = [SALARY_STEP, ACCRUED_VACATION_STEP];

@@ -42,6 +42,14 @@ export const useFormData = create((set, get) => ({
       title: "Término do contrato de experiência",
       value: "",
     },
+    receivedUnemploymentBefore: {
+      title: "Já recebeu seguro-desemprego antes?",
+      value: "",
+    },
+    monthsSinceLastUnemployment: {
+      title: "Meses desde a última vez que recebeu",
+      value: "",
+    },
   },
   getCurrentData: () => get().formData,
 
@@ -98,6 +106,18 @@ export const useFormData = create((set, get) => ({
         },
         accruedVacation: {
           title: "Férias vencidas",
+          value: "",
+        },
+        experienceTermination: {
+          title: "Término do contrato de experiência",
+          value: "",
+        },
+        receivedUnemploymentBefore: {
+          title: "Já recebeu seguro-desemprego antes?",
+          value: "",
+        },
+        monthsSinceLastUnemployment: {
+          title: "Meses desde a última vez que recebeu",
           value: "",
         },
       },

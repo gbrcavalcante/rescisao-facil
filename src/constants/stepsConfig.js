@@ -2,6 +2,7 @@
 import { AccruedVacationStep } from "@/components/steps/accrued-vacation-step";
 import { ExperienceTerminationStep } from "@/components/steps/experience-termination-step";
 import { FgtsStep } from "@/components/steps/fgts-step";
+import { LastUnemploymentBenefitStep } from "@/components/steps/last-unemployment-benefit-step";
 import { PriorNoticeStep } from "@/components/steps/prior-notice-step";
 import { ProportionalVacationStep } from "@/components/steps/proportional-vacation-step";
 import { SalaryStep } from "@/components/steps/salary-step";
@@ -12,6 +13,7 @@ import { WorkPeriodStep } from "@/components/steps/work-period-step";
 import { schemaAccruedVacation } from "@/schemas/schemaAccruedVacation";
 import { schemaExperienceTermination } from "@/schemas/schemaExperienceTermination";
 import { schemaFgts } from "@/schemas/schemaFgts";
+import { schemaLastUnemploymentBenefit } from "@/schemas/schemaLastUnemploymentBenefit";
 import { schemaPriorNotice } from "@/schemas/schemaPriorNotice";
 import { schemaProportionalVacation } from "@/schemas/schemaProportionalVacation";
 import { schemaSalary } from "@/schemas/schemaSalary";
@@ -28,6 +30,7 @@ import {
   CalendarCheck,
   CalendarDays,
   AlertTriangle,
+  Archive,
 } from "lucide-react";
 
 const SALARY_STEP = {
@@ -101,6 +104,15 @@ const EXPERIENCE_TERMINATION_STEP = {
   icon: AlertTriangle,
 };
 
+const LAST_UNEMPLOYMENT_BENEFIT_STEP = {
+  title: "Seguro-desemprego anterior",
+  description:
+    "Informe se você já recebeu seguro-desemprego antes e há quanto tempo.",
+  field: LastUnemploymentBenefitStep,
+  schema: schemaLastUnemploymentBenefit,
+  icon: Archive,
+};
+
 export {
   SALARY_STEP,
   FGTS_STEP,
@@ -110,4 +122,5 @@ export {
   PROPORTIONAL_VACATION_STEP,
   ACCRUED_VACATION_STEP,
   EXPERIENCE_TERMINATION_STEP,
+  LAST_UNEMPLOYMENT_BENEFIT_STEP,
 };

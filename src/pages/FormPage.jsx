@@ -54,6 +54,8 @@ export default function FormPage() {
       proportionalVacationMonths: "",
       accruedVacation: "",
       experienceTermination: "",
+      receivedUnemploymentBefore: "",
+      monthsSinceLastUnemployment: "",
     },
   });
 
