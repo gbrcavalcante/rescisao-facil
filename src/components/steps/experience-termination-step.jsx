@@ -26,9 +26,6 @@ export function ExperienceTerminationStep({ form }) {
       ? calculateDaysBetween(admission.value, removal.value)
       : null;
 
-  console.log(daysWorked);
-  console.log(withdrawalModality)
-
   const showWarning =
     experienceTermination === "pedido de demissão" &&
     withdrawalModality.value === "rescisão" &&
