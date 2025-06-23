@@ -13,7 +13,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
 import { useFormData } from "@/store/formDataStore";
-import { calculateDaysBetween } from "@/utils/calculations";
+import { calculateDaysBetween } from "@/utils/calculations/calculateDaysBetween";
 
 export function ExperienceTerminationStep({ form }) {
   const { getCurrentData } = useFormData();
