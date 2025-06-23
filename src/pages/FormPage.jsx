@@ -53,6 +53,7 @@ export default function FormPage() {
       proportionalVacation: "",
       proportionalVacationMonths: "",
       accruedVacation: "",
+      experienceTermination: "",
     },
   });
 

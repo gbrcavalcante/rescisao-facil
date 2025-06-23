@@ -6,6 +6,7 @@ import {
   SALARY_STEP,
   WITHDRAWAL_MODALITY_STEP,
   WORK_PERIOD_STEP,
+  EXPERIENCE_TERMINATION_STEP,
 } from "@/constants/stepsConfig";
 
 const resignation_steps = [
@@ -31,6 +32,7 @@ const trial_period_end_steps = [
   SALARY_STEP,
   FGTS_STEP,
   WITHDRAWAL_MODALITY_STEP,
+  EXPERIENCE_TERMINATION_STEP,
   WORK_PERIOD_STEP,
 ];
 

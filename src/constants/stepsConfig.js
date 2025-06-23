@@ -1,5 +1,6 @@
 // Components
 import { AccruedVacationStep } from "@/components/steps/accrued-vacation-step";
+import { ExperienceTerminationStep } from "@/components/steps/experience-termination-step";
 import { FgtsStep } from "@/components/steps/fgts-step";
 import { PriorNoticeStep } from "@/components/steps/prior-notice-step";
 import { ProportionalVacationStep } from "@/components/steps/proportional-vacation-step";
@@ -9,6 +10,7 @@ import { WorkPeriodStep } from "@/components/steps/work-period-step";
 
 // Schemas
 import { schemaAccruedVacation } from "@/schemas/schemaAccruedVacation";
+import { schemaExperienceTermination } from "@/schemas/schemaExperienceTermination";
 import { schemaFgts } from "@/schemas/schemaFgts";
 import { schemaPriorNotice } from "@/schemas/schemaPriorNotice";
 import { schemaProportionalVacation } from "@/schemas/schemaProportionalVacation";
@@ -25,6 +27,7 @@ import {
   HandCoins,
   CalendarCheck,
   CalendarDays,
+  AlertTriangle,
 } from "lucide-react";
 
 const SALARY_STEP = {
@@ -89,6 +92,15 @@ const ACCRUED_VACATION_STEP = {
   icon: CalendarCheck,
 };
 
+const EXPERIENCE_TERMINATION_STEP = {
+  title: "Término do contrato de experiência",
+  description:
+    "Informe se foi você quem pediu demissão ou se foi dispensado pela empresa durante o contrato de experiência.",
+  field: ExperienceTerminationStep,
+  schema: schemaExperienceTermination,
+  icon: AlertTriangle,
+};
+
 export {
   SALARY_STEP,
   FGTS_STEP,
@@ -97,4 +109,5 @@ export {
   PRIOR_NOTICE_STEP,
   PROPORTIONAL_VACATION_STEP,
   ACCRUED_VACATION_STEP,
+  EXPERIENCE_TERMINATION_STEP,
 };

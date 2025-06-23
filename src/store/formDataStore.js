@@ -38,6 +38,10 @@ export const useFormData = create((set, get) => ({
       title: "Férias vencidas",
       value: "",
     },
+    experienceTermination: {
+      title: "Término do contrato de experiência",
+      value: "",
+    },
   },
   getCurrentData: () => get().formData,
 

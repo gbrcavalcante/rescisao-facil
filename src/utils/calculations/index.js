@@ -1,4 +1,5 @@
 import parseNumberFromString from "@/utils/parseNumberFromString";
+import { calculateDaysBetween } from "@/utils/calculations";
 
 import {
   calculateAccruedVacation,
@@ -24,10 +25,14 @@ export function calculateAll(inputs) {
     proportionalVacationMonths,
     accruedVacation,
     terminationReason,
+    experienceTermination,
   } = inputs;
 
   const parsedSalary = parseNumberFromString(salary.value);
   const parsedFgts = parseNumberFromString(fgts.value);
+
+  const termination = terminationReason.value;
+  const daysWorked = calculateDaysBetween(admission.value, removal.value);
 
   const result = {
     proportionalSalary: {
@@ -76,9 +81,9 @@ export function calculateAll(inputs) {
   result.proportionalSalary.inss = calculateINSS(proportionalSalary);
   result.proportionalSalary.irrf = calculateIRRF(proportionalSalary);
 
-  // Aviso prévio (indenizado)
+  // Aviso prévio e multa rescisória (dispensa sem justa causa)
   if (
-    terminationReason.value === "dismissal_without_cause" &&
+    termination === "dismissal_without_cause" &&
     priorNotice.value === "não"
   ) {
     const noticeValue = calculateIndemnifiedNoticeValue(
@@ -90,33 +95,45 @@ export function calculateAll(inputs) {
     result.priorNotice.inss = calculateINSS(noticeValue);
     result.priorNotice.irrf = calculateIRRF(noticeValue);
 
-    // Multa rescisória sobre o FGTS
     result.fineTermination.value = calculateFineTermination(parsedFgts);
   }
 
-  // FGTS
-  if (
-    (terminationReason.value === "dismissal_without_cause" ||
-      terminationReason.value === "trial_period_end") &&
-    withdrawalModality.value === "rescisão"
-  ) {
+  // FGTS — considerando contrato de experiência e tipo da saída
+  const isEarlyResignation =
+    termination === "resignation" && daysWorked < 90;
+
+  const isTrialPeriodDismissed =
+    termination === "trial_period_end" &&
+    experienceTermination?.value === "dispensa sem justa causa";
+
+  const isTrialPeriodResignation =
+    termination === "trial_period_end" &&
+    experienceTermination?.value === "pedido de demissão";
+
+  const hasRightToFGTS =
+    withdrawalModality.value === "rescisão" &&
+    (
+      termination === "dismissal_without_cause" ||
+      isTrialPeriodDismissed
+    ) &&
+    !isEarlyResignation &&
+    !isTrialPeriodResignation;
+
+  if (hasRightToFGTS) {
     result.fgts.value = parsedFgts;
   }
 
-  // Férias vencidas
-  if (
-    terminationReason.value !== "trial_period_end" &&
-    accruedVacation.value === "sim"
-  ) {
+  // Férias vencidas (exceto no término de experiência)
+  if (termination !== "trial_period_end" && accruedVacation.value === "sim") {
     const accrued = calculateAccruedVacation(parsedSalary);
     result.accruedVacation.value = accrued;
     result.accruedVacation.inss = calculateINSS(accrued);
     result.accruedVacation.irrf = calculateIRRF(accrued);
   }
 
-  // Férias proporcionais
+  // Férias proporcionais (exceto justa causa)
   if (
-    terminationReason.value !== "dismissal_with_cause" &&
+    termination !== "dismissal_with_cause" &&
     proportionalVacation.value === "sim"
   ) {
     const proportional = calculateProportionalVacation(
@@ -128,8 +145,8 @@ export function calculateAll(inputs) {
     result.proportionalVacation.irrf = calculateIRRF(proportional);
   }
 
-  // 13º salário
-  if (terminationReason.value !== "dismissal_with_cause") {
+  // 13º salário (exceto justa causa)
+  if (termination !== "dismissal_with_cause") {
     const thirteenth = calculateThirteenthSalary(parsedSalary);
     result.thirteenthSalary.value = thirteenth;
     result.thirteenthSalary.inss = calculateINSS(thirteenth);
