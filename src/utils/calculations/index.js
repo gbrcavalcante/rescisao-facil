@@ -1,5 +1,4 @@
 import parseNumberFromString from "@/utils/parseNumberFromString";
-import { calculateDaysBetween } from "@/utils/calculations";
 
 import {
   calculateAccruedVacation,
@@ -12,6 +11,7 @@ import { calculateIndemnifiedNoticeValue } from "./calculateIndemnifiedNotice";
 
 import { calculateINSS } from "@/utils/taxes/calculateINSS";
 import { calculateIRRF } from "@/utils/taxes/calculateIRRF";
+import { calculateDaysBetween } from "./calculateDaysBetween";
 
 export function calculateAll(inputs) {
   const {
