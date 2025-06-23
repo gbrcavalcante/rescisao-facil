@@ -19,15 +19,18 @@ export function ExperienceTerminationStep({ form }) {
   const { getCurrentData } = useFormData();
   const { admission, removal, fgts, withdrawalModality } = getCurrentData();
 
-  const terminationReason = form.watch("experienceTerminationReason");
+  const experienceTermination = form.watch("experienceTermination");
 
   const daysWorked =
     admission.value && removal.value
       ? calculateDaysBetween(admission.value, removal.value)
       : null;
 
+  console.log(daysWorked);
+  console.log(withdrawalModality)
+
   const showWarning =
-    terminationReason === "pedido de demissão" &&
+    experienceTermination === "pedido de demissão" &&
     withdrawalModality.value === "rescisão" &&
     daysWorked !== null &&
     daysWorked < 90;
