@@ -1,5 +1,7 @@
 # Rescisão Fácil
 
+![Image](https://github.com/user-attachments/assets/a39934a8-08d6-4a7d-a8d8-b5d0a1c6b945)
+
 Uma aplicação web **multi-etapas** para o cálculo completo e preciso da **rescisão trabalhista** e do **seguro-desemprego**, seguindo rigorosamente a legislação brasileira atual. Cada tipo de rescisão possui um fluxo exclusivo e adaptado para garantir a máxima exatidão nos cálculos.
 
 ## ✨ Principais Funcionalidades
