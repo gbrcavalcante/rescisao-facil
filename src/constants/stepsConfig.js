@@ -1,24 +1,26 @@
 // Components
-import { AccruedVacationStep } from "@/components/steps/accrued-vacation-step";
-import { ExperienceTerminationStep } from "@/components/steps/experience-termination-step";
-import { FgtsStep } from "@/components/steps/fgts-step";
-import { LastUnemploymentBenefitStep } from "@/components/steps/last-unemployment-benefit-step";
-import { PriorNoticeStep } from "@/components/steps/prior-notice-step";
-import { ProportionalVacationStep } from "@/components/steps/proportional-vacation-step";
-import { SalaryStep } from "@/components/steps/salary-step";
-import { WithdrawalModalityStep } from "@/components/steps/withdrawal-modality-step";
-import { WorkPeriodStep } from "@/components/steps/work-period-step";
+import {
+  AccruedVacationStep,
+  FgtsStep,
+  LastUnemploymentBenefitStep,
+  PriorNoticeStep,
+  ProportionalVacationStep,
+  SalaryStep,
+  WithdrawalModalityStep,
+  WorkPeriodStep,
+} from "@/components/steps";
 
 // Schemas
-import { schemaAccruedVacation } from "@/schemas/schemaAccruedVacation";
-import { schemaExperienceTermination } from "@/schemas/schemaExperienceTermination";
-import { schemaFgts } from "@/schemas/schemaFgts";
-import { schemaLastUnemploymentBenefit } from "@/schemas/schemaLastUnemploymentBenefit";
-import { schemaPriorNotice } from "@/schemas/schemaPriorNotice";
-import { schemaProportionalVacation } from "@/schemas/schemaProportionalVacation";
-import { schemaSalary } from "@/schemas/schemaSalary";
-import { schemaWithdrawalModality } from "@/schemas/schemaWithdrawalModality";
-import { schemaWorkPeriod } from "@/schemas/schemaWorkPeriod";
+import {
+  schemaAccruedVacation,
+  schemaFgts,
+  schemaLastUnemploymentBenefit,
+  schemaPriorNotice,
+  schemaProportionalVacation,
+  schemaSalary,
+  schemaWithdrawalModality,
+  schemaWorkPeriod,
+} from "@/schemas";
 
 //Icons
 import {
@@ -95,15 +97,6 @@ const ACCRUED_VACATION_STEP = {
   icon: CalendarCheck,
 };
 
-const EXPERIENCE_TERMINATION_STEP = {
-  title: "Término do contrato de experiência",
-  description:
-    "Informe se foi você quem pediu demissão ou se foi dispensado pela empresa durante o contrato de experiência.",
-  field: ExperienceTerminationStep,
-  schema: schemaExperienceTermination,
-  icon: AlertTriangle,
-};
-
 const LAST_UNEMPLOYMENT_BENEFIT_STEP = {
   title: "Seguro-desemprego anterior",
   description:
@@ -121,6 +114,5 @@ export {
   PRIOR_NOTICE_STEP,
   PROPORTIONAL_VACATION_STEP,
   ACCRUED_VACATION_STEP,
-  EXPERIENCE_TERMINATION_STEP,
   LAST_UNEMPLOYMENT_BENEFIT_STEP,
 };

@@ -38,10 +38,6 @@ export const useFormData = create((set, get) => ({
       title: "Férias vencidas",
       value: "",
     },
-    experienceTermination: {
-      title: "Término do contrato de experiência",
-      value: "",
-    },
     receivedUnemploymentBefore: {
       title: "Já recebeu seguro-desemprego antes?",
       value: "",

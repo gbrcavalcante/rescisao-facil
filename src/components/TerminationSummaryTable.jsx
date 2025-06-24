@@ -37,10 +37,10 @@ export default function TerminationSummaryTable({
             <TableRow key={key}>
               <TableCell>{item.title}</TableCell>
               <TableCell>{formatNumberToBRL(item.value)}</TableCell>
-              <TableCell className="text-destructive">
+              <TableCell>
                 {item.inss ? formatNumberToBRL(item.inss) : null}
               </TableCell>
-              <TableCell className="text-destructive">
+              <TableCell>
                 {item.irrf ? formatNumberToBRL(item.irrf) : null}
               </TableCell>
             </TableRow>
@@ -48,15 +48,11 @@ export default function TerminationSummaryTable({
         </TableBody>
 
         <TableFooter>
-          <TableRow className="font-medium">
-            <TableCell className="text-end">TOTAL</TableCell>
+          <TableRow>
+            <TableCell>Total</TableCell>
             <TableCell>{formatNumberToBRL(totalEarnings)}</TableCell>
-            <TableCell className="text-destructive">
-              {formatNumberToBRL(totalINSS)}
-            </TableCell>
-            <TableCell className="text-destructive">
-              {formatNumberToBRL(totalIRRF)}
-            </TableCell>
+            <TableCell>{formatNumberToBRL(totalINSS)}</TableCell>
+            <TableCell>{formatNumberToBRL(totalIRRF)}</TableCell>
           </TableRow>
         </TableFooter>
       </Table>

@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { AlertCircle } from "lucide-react";
 
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   FormControl,
   FormField,
@@ -21,6 +21,10 @@ export function PriorNoticeStep({ form }) {
   const { terminationReason } = useTerminationReason();
 
   const priorNotice = form.watch("priorNotice");
+
+  const showWarning =
+    priorNotice === "não" && terminationReason?.value === "resignation";
+  const salaryValue = salary?.value || "R$ 0,00";
 
   return (
     <div className="space-y-6">
@@ -71,7 +75,7 @@ export function PriorNoticeStep({ form }) {
         )}
       />
 
-      {priorNotice === "não" && terminationReason.value === "resignation" && (
+      {showWarning && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -79,10 +83,13 @@ export function PriorNoticeStep({ form }) {
         >
           <Alert variant="destructive">
             <AlertCircle />
-            <AlertDescription>
-              Será descontado {salary.value} do seu acerto de rescisão por não ter
-              cumprido o aviso prévio, conforme art. 487, §2º da CLT.
-            </AlertDescription>
+            <div>
+              <AlertTitle>Aviso prévio não cumprido</AlertTitle>
+              <AlertDescription>
+                Será descontado {salaryValue} do seu acerto de rescisão por não
+                ter cumprido o aviso prévio, conforme art. 487, §2º da CLT.
+              </AlertDescription>
+            </div>
           </Alert>
         </motion.div>
       )}

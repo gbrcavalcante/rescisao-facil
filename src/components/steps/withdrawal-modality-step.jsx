@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-
 import { AlertCircle } from "lucide-react";
+
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 import {
   FormControl,
@@ -10,15 +11,26 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 
 import { useFormData } from "@/store/formDataStore";
+import { useTerminationReason } from "@/store/terminationReasonStore";
+import { calculateFgtsWithdrawal } from "@/utils/calculations/calculateFgtsWithdrawal";
 
 export function WithdrawalModalityStep({ form }) {
   const { getCurrentData } = useFormData();
   const { fgts } = getCurrentData();
+  const { terminationReason } = useTerminationReason();
 
   const withdrawalModality = form.watch("withdrawalModality");
+  const showWarning = withdrawalModality === "aniversário";
+
+  const isMutualAgreement = terminationReason?.value === "mutual_agreement";
+
+  const adjustedFgtsValue = calculateFgtsWithdrawal(
+    fgts?.value,
+    terminationReason?.value
+  );
+  const fgtsValue = isMutualAgreement ? adjustedFgtsValue : fgts?.value;
 
   return (
     <div className="space-y-6">
@@ -54,7 +66,7 @@ export function WithdrawalModalityStep({ form }) {
         )}
       />
 
-      {withdrawalModality === "aniversário" && (
+      {showWarning && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -62,9 +74,10 @@ export function WithdrawalModalityStep({ form }) {
         >
           <Alert variant="destructive">
             <AlertCircle />
+            <AlertTitle>Saque-aniversário ativo</AlertTitle>
             <AlertDescription>
-              Com o saque-aniversário ativo, o valor de {fgts.value} do seu FGTS não
-              estará disponível para saque na rescisão, conforme Lei nº
+              Com o saque-aniversário ativo, o valor de {fgtsValue} do seu FGTS
+              não estará disponível para saque na rescisão, conforme Lei nº
               13.932/2019.
             </AlertDescription>
           </Alert>
