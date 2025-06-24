@@ -26,7 +26,6 @@ const dismissal_without_cause_steps = [
   ACCRUED_VACATION_STEP,
   PROPORTIONAL_VACATION_STEP,
   LAST_UNEMPLOYMENT_BENEFIT_STEP,
-  CONTRACT_TERMINATED_EARLY_STEP,
 ];
 
 const dismissal_with_cause_steps = [SALARY_STEP, ACCRUED_VACATION_STEP];
@@ -44,12 +43,12 @@ const indirect_termination_steps = [
 
 const fixed_term_end_steps = [
   SALARY_STEP,
-  CONTRACT_TERMINATED_EARLY_STEP,
   FGTS_STEP,
   WITHDRAWAL_MODALITY_STEP,
   WORK_PERIOD_STEP,
   ACCRUED_VACATION_STEP,
   PROPORTIONAL_VACATION_STEP,
+  CONTRACT_TERMINATED_EARLY_STEP,
 ];
 
 const mutual_agreement_steps = [
