@@ -23,7 +23,14 @@ export function PriorNoticeStep({ form }) {
   const priorNotice = form.watch("priorNotice");
 
   const showWarning =
-    priorNotice === "não" && terminationReason?.value === "resignation";
+    priorNotice === "não" &&
+    (terminationReason?.value === "resignation" ||
+      terminationReason?.value === "mutual_agreement");
+
+  const isResignationOrMutualAgreement =
+    terminationReason?.value === "resignation" ||
+    terminationReason?.value === "mutual_agreement";
+
   const salaryValue = salary?.value || "R$ 0,00";
 
   return (
@@ -52,13 +59,13 @@ export function PriorNoticeStep({ form }) {
                     <RadioGroupItem value="não" />
                   </FormControl>
                   <FormLabel className="font-normal">
-                    {terminationReason.value === "resignation"
+                    {isResignationOrMutualAgreement
                       ? "Não, não irei cumprir o aviso prévio."
                       : "Não, a empresa não me deu aviso prévio"}
                   </FormLabel>
                 </FormItem>
 
-                {terminationReason.value === "resignation" && (
+                {isResignationOrMutualAgreement && (
                   <FormItem className="flex items-center gap-3">
                     <FormControl>
                       <RadioGroupItem value="dispensado" />
@@ -83,13 +90,11 @@ export function PriorNoticeStep({ form }) {
         >
           <Alert variant="destructive">
             <AlertCircle />
-            <div>
               <AlertTitle>Aviso prévio não cumprido</AlertTitle>
               <AlertDescription>
                 Será descontado {salaryValue} do seu acerto de rescisão por não
                 ter cumprido o aviso prévio, conforme art. 487, §2º da CLT.
               </AlertDescription>
-            </div>
           </Alert>
         </motion.div>
       )}

@@ -53,6 +53,8 @@ export default function FormPage() {
       proportionalVacation: "",
       proportionalVacationMonths: "",
       accruedVacation: "",
+      contractTerminatedEarly: "",
+      monthsRemaining: "",
       receivedUnemploymentBefore: "",
       monthsSinceLastUnemployment: "",
     },

@@ -1,6 +1,7 @@
 // Components
 import {
   AccruedVacationStep,
+  ContractTerminatedEarlyStep,
   FgtsStep,
   LastUnemploymentBenefitStep,
   PriorNoticeStep,
@@ -13,6 +14,7 @@ import {
 // Schemas
 import {
   schemaAccruedVacation,
+  schemaContractTerminatedEarly,
   schemaFgts,
   schemaLastUnemploymentBenefit,
   schemaPriorNotice,
@@ -106,6 +108,15 @@ const LAST_UNEMPLOYMENT_BENEFIT_STEP = {
   icon: Archive,
 };
 
+const CONTRACT_TERMINATED_EARLY_STEP = {
+  title: "Término Antecipado do Contrato",
+  description:
+    "Informe se o contrato de prazo determinado foi encerrado antes do prazo final e quantos meses faltavam.",
+  field: ContractTerminatedEarlyStep,
+  schema: schemaContractTerminatedEarly,
+  icon: AlertTriangle,
+};
+
 export {
   SALARY_STEP,
   FGTS_STEP,
@@ -115,4 +126,5 @@ export {
   PROPORTIONAL_VACATION_STEP,
   ACCRUED_VACATION_STEP,
   LAST_UNEMPLOYMENT_BENEFIT_STEP,
+  CONTRACT_TERMINATED_EARLY_STEP,
 };

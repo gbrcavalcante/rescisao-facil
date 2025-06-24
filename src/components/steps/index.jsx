@@ -6,3 +6,4 @@ export { ProportionalVacationStep } from "./proportional-vacation-step";
 export { SalaryStep } from "./salary-step";
 export { WithdrawalModalityStep } from "./withdrawal-modality-step";
 export { WorkPeriodStep } from "./work-period-step";
+export { ContractTerminatedEarlyStep } from "./contract-terminated-early-step";

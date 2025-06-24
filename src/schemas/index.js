@@ -6,3 +6,4 @@ export { schemaProportionalVacation } from "./schemaProportionalVacation";
 export { schemaSalary } from "./schemaSalary";
 export { schemaWithdrawalModality } from "./schemaWithdrawalModality";
 export { schemaWorkPeriod } from "./schemaWorkPeriod";
+export { schemaContractTerminatedEarly } from "./schemaContractTerminatedEarly";

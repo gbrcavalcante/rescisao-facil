@@ -38,6 +38,14 @@ export const useFormData = create((set, get) => ({
       title: "Férias vencidas",
       value: "",
     },
+    contractTerminatedEarly: {
+      title: "Contrato encerrado antes do prazo?",
+      value: "",
+    },
+    monthsRemaining: {
+      title: "Meses restantes no contrato",
+      value: "",
+    },
     receivedUnemploymentBefore: {
       title: "Já recebeu seguro-desemprego antes?",
       value: "",
@@ -47,6 +55,7 @@ export const useFormData = create((set, get) => ({
       value: "",
     },
   },
+
   getCurrentData: () => get().formData,
 
   updateField: (data) =>
@@ -104,8 +113,12 @@ export const useFormData = create((set, get) => ({
           title: "Férias vencidas",
           value: "",
         },
-        experienceTermination: {
-          title: "Término do contrato de experiência",
+        contractTerminatedEarly: {
+          title: "Contrato encerrado antes do prazo?",
+          value: "",
+        },
+        monthsRemaining: {
+          title: "Meses restantes no contrato",
           value: "",
         },
         receivedUnemploymentBefore: {

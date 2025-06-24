@@ -3,7 +3,7 @@ import { Link } from "./ui/link";
 
 export default function Footer() {
   return (
-    <footer className="text-center">
+    <footer className="text-center py-6">
       <TypographyMuted>
         Desenvolvido por{" "}
         <Link href="https://github.com/gabriellcro">Gabriel Cavalcante</Link>. O

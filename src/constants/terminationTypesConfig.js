@@ -5,6 +5,8 @@ import {
   ShieldOff,
   UserX,
   Scale,
+  AlertCircle,
+  XCircle,
 } from "lucide-react";
 
 const TERMINATION_TYPES = [
@@ -54,6 +56,22 @@ const TERMINATION_TYPES = [
     icon: Scale,
     value: "mutual_agreement",
     legalReference: "CLT, art. 484-A",
+  },
+  {
+    title: "Término do contrato de experiência (demitido)",
+    description:
+      "O contrato de experiência foi encerrado pela empresa, sem justa causa.",
+    icon: AlertCircle,
+    value: "trial_period_end_dismissed",
+    legalReference: "CLT, art. 445, §2º",
+  },
+  {
+    title: "Término do contrato de experiência (solicitei demissão)",
+    description:
+      "Você solicitou o encerramento do contrato de experiência antes do prazo.",
+    icon: XCircle,
+    value: "trial_period_end_resignation",
+    legalReference: "CLT, art. 445, §2º",
   },
 ];
 

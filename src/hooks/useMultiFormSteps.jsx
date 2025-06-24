@@ -8,6 +8,8 @@ import {
   indirect_termination_steps,
   fixed_term_end_steps,
   mutual_agreement_steps,
+  trial_period_end_dismissed_steps,
+  trial_period_end_resignation_steps,
 } from "@/constants/terminationStepsConfig";
 
 const terminationConfigMap = {
@@ -17,6 +19,8 @@ const terminationConfigMap = {
   indirect_termination: indirect_termination_steps,
   fixed_term_end: fixed_term_end_steps,
   mutual_agreement: mutual_agreement_steps,
+  trial_period_end_dismissed: trial_period_end_dismissed_steps,
+  trial_period_end_resignation: trial_period_end_resignation_steps,
 };
 
 export function useMultiFormSteps() {

@@ -14,7 +14,8 @@ import { calculateMutualAgreement } from "../cases/calculateMutualAgreement";
 import { calculateIndirectTermination } from "../cases/calculateIndirectTermination";
 import { calculateFixedTermEnd } from "../cases/calculateFixedTermEnd";
 import { calculateDaysBetween } from "./calculateDaysBetween";
-
+import { calculateTrialPeriodDismissed } from "../cases/calculateTrialPeriodDismissed";
+import { calculateTrialPeriodResignation } from "../cases/calculateTrialPeriodResignation";
 
 export function calculateAll(inputs) {
   const termination = inputs.terminationReason?.value;
@@ -22,10 +23,19 @@ export function calculateAll(inputs) {
   switch (termination) {
     case "mutual_agreement":
       return calculateMutualAgreement(inputs);
+
     case "indirect_termination":
       return calculateIndirectTermination(inputs);
+
     case "fixed_term_end":
       return calculateFixedTermEnd(inputs);
+
+    case "trial_period_end_dismissed":
+      return calculateTrialPeriodDismissed(inputs);
+
+    case "trial_period_end_resignation":
+      return calculateTrialPeriodResignation(inputs);
+
     default:
       return calculateDefault(inputs);
   }
@@ -43,7 +53,6 @@ function calculateDefault(inputs) {
     proportionalVacationMonths,
     accruedVacation,
     terminationReason,
-    experienceTermination,
   } = inputs;
 
   const parsedSalary = parseNumberFromString(salary.value);
@@ -115,19 +124,10 @@ function calculateDefault(inputs) {
 
   const isEarlyResignation = termination === "resignation" && daysWorked < 90;
 
-  const isTrialPeriodDismissed =
-    termination === "trial_period_end" &&
-    experienceTermination?.value === "dispensa sem justa causa";
-
-  const isTrialPeriodResignation =
-    termination === "trial_period_end" &&
-    experienceTermination?.value === "pedido de demissão";
-
   const hasRightToFGTS =
     withdrawalModality.value === "rescisão" &&
-    (termination === "dismissal_without_cause" || isTrialPeriodDismissed) &&
-    !isEarlyResignation &&
-    !isTrialPeriodResignation;
+    termination === "dismissal_without_cause" &&
+    !isEarlyResignation;
 
   if (hasRightToFGTS) {
     result.fgts.value = parsedFgts;

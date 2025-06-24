@@ -5,7 +5,7 @@ import TerminationTypeCards from "@/components/TerminationTypeCards";
 
 export default function TerminationReasonPage() {
   return (
-    <section className="space-y-6 max-w-3xl w-full m-auto">
+    <section className="space-y-6 max-w-5xl w-full m-auto">
       <motion.header
         className="space-y-2"
         initial={{ opacity: 0 }}

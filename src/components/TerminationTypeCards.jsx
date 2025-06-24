@@ -5,12 +5,14 @@ import { useTerminationReason } from "@/store/terminationReasonStore";
 
 import {
   Card,
+  CardAction,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 
 import TERMINATION_TYPES from "@/constants/terminationTypesConfig";
+import { Badge } from "./ui/badge";
 
 export default function TerminationTypeCards() {
   const { updateTerminationReason } = useTerminationReason();
@@ -40,12 +42,15 @@ export default function TerminationTypeCards() {
               className="w-full h-full text-start"
               onClick={() => handleProceedToForm(item)}
             >
-              <Card className='h-full'>
+              <Card className="h-full">
                 <CardHeader>
                   <CardTitle>
                     <Icon className="text-primary mb-6" />
                     {item.title}
                   </CardTitle>
+                  <CardAction>
+                    <Badge variant="outline">{item.legalReference}</Badge>
+                  </CardAction>
                   <CardDescription>{item.description}</CardDescription>
                 </CardHeader>
               </Card>
