@@ -8,7 +8,7 @@ function StatLabel({ children }) {
 
 function StatValue({ children }) {
   return (
-    <p className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+    <p className="text-2xl text-primary font-semibold tabular-nums @[250px]/card:text-3xl">
       <strong>{children}</strong>
     </p>
   );
