@@ -42,7 +42,7 @@ export default function TerminationTypeCards() {
               className="w-full h-full text-start"
               onClick={() => handleProceedToForm(item)}
             >
-              <Card className="h-full">
+              <Card className="h-full hover:border-primary transition-colors cursor-pointer">
                 <CardHeader>
                   <CardTitle>
                     <Icon className="text-primary mb-6" />
