@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <motion.section
-      className="text-center space-y-6 m-auto max-w-3xl"
+      className="items-center m-auto text-center space-y-6 max-w-3xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -27,10 +27,15 @@ export default function HomePage() {
           relatório completo em poucos minutos.
         </TypographyP>
       </header>
-      <Button className="rounded-full" onClick={() => navigate("/termination-reason")}>
-        Calcular minha rescisão
-        <ArrowRight />
-      </Button>
+      <div>
+        <Button
+          className="rounded-full"
+          onClick={() => navigate("/termination-reason")}
+        >
+          Calcular minha rescisão
+          <ArrowRight />
+        </Button>
+      </div>
     </motion.section>
   );
 }
